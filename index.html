@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KitKat History & Flavours</title>
+  <style>
+    :root {
+      --bg: #fff;
+      --primary: #e60000;
+      --secondary: #ffffff;
+      --text: #333;
+      --card: #f9f0f0;
+      --accent: #ff5c5c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(180deg, #fff 0%, #ffecec 100%);
+      color: var(--text);
+    }
+
+    header {
+      background: var(--primary);
+      color: var(--secondary);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.5), transparent 25%),
+        radial-gradient(circle at 80% 30%, rgba(255,255,255,0.35), transparent 20%);
+      pointer-events: none;
+    }
+
+    header h1,
+    header p {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      letter-spacing: 0.05em;
+    }
+
+    header p {
+      margin: 1rem auto 0;
+      max-width: 36rem;
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    .page-wrap {
+      padding: 2rem 1.5rem 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .intro {
+      display: grid;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .intro article {
+      background: var(--card);
+      padding: 1.75rem;
+      border-radius: 24px;
+      box-shadow: 0 18px 45px rgba(230, 0, 0, 0.08);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.85rem;
+      font-size: 1.35rem;
+    }
+
+    .tile-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid rgba(230,0,0,0.12);
+      border-radius: 22px;
+      padding: 1.5rem;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 36px rgba(0,0,0,0.12);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--primary);
+    }
+
+    .card p,
+    .card ul {
+      margin: 0.85rem 0 0;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    .card ul {
+      padding-left: 1.25rem;
+    }
+
+    .flavors {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .flavor {
+      background: linear-gradient(180deg, #fff 0%, #feecec 100%);
+      border: 1px solid rgba(230,0,0,0.14);
+      border-radius: 20px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+
+    .flavor strong {
+      display: block;
+      font-size: 1.05rem;
+      margin-bottom: 0.6rem;
+      color: var(--primary);
+    }
+
+    .fact-list {
+      list-style: disc;
+      padding-left: 1.25rem;
+    }
+
+    .partnerships {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .partnership {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .partnership-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--primary);
+      color: white;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+
+    .graphic-panel {
+      margin-top: 2rem;
+      background: linear-gradient(180deg, #ffffff 0%, #ffe3e3 100%);
+      border-radius: 28px;
+      padding: 2rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .graphic-panel::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(255,255,255,0.4), transparent 18%);
+      pointer-events: none;
+    }
+
+    .graphic-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .graphic-inner svg {
+      width: 100%;
+      max-width: 400px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .graphic-copy {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .graphic-copy h2 {
+      margin: 0;
+      color: #b20000;
+      font-size: 2rem;
+    }
+
+    @media (max-width: 820px) {
+      .graphic-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>KitKat: History, Flavours & Partnerships</h1>
+    <p>Explore the story of KitKat, from its classic beginnings to bold flavours, iconic brand collaborations, and unexpected facts in a red and white celebration.</p>
+  </header>
+
+  <main class="page-wrap">
+    <section class="intro">
+      <article>
+        <div class="section-heading">
+          <span>🍫</span>
+          <h2>History at a Glance</h2>
+        </div>
+        <p>KitKat began in 1935 as "Rowntree's Chocolate Crisp" in York, England. The name KitKat arrived in 1937, and the modern four-fingered bar with a red wrapper emerged in the 1940s. Since then, KitKat has grown into a global confectionery icon known for crisp wafers covered in smooth milk chocolate.</p>
+      </article>
+      <article>
+        <div class="section-heading">
+          <span>⭐</span>
+          <h2>Why KitKat Stands Out</h2>
+        </div>
+        <ul class="fact-list">
+          <li>KitKat's famous slogan, "Have a break, have a KitKat," was introduced in 1958.</li>
+          <li>Japan is famous for exclusive KitKat flavours and over 300 regional editions.</li>
+          <li>The red and white wrapper has become one of the most recognizable designs in chocolate packaging.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="tile-grid">
+      <div class="card">
+        <h3>Origins</h3>
+        <p>Originally marketed as a tea-time treat, KitKat grew from a British confectionery to a worldwide brand. During World War II, chocolate shortages temporarily changed its recipe, but the bar returned stronger post-war.</p>
+      </div>
+      <div class="card">
+        <h3>Evolution</h3>
+        <p>KitKat has evolved with new recipes, packaging, and limited editions. Nestlé acquired Rowntree in 1988 and continued expanding KitKat across Europe, the Americas, and Asia.</p>
+      </div>
+      <div class="card">
+        <h3>Cultural Impact</h3>
+        <p>KitKat is part of pop culture, seen in commercials, films, and even digital campaigns. The brand is famous for playful promotional events and eye-catching collaborations.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <span>🍓</span>
+        <h2>Popular Flavours</h2>
+      </div>
+      <div class="flavors">
+        <div class="flavor">
+          <strong>Milk Chocolate</strong>
+          The classic original with creamy milk chocolate and crisp wafer layers.
+        </div>
+        <div class="flavor">
+          <strong>Dark Chocolate</strong>
+          A richer option with a smooth dark chocolate coating.
+        </div>
+        <div class="flavor">
+          <strong>White Chocolate</strong>
+          A sweet, vanilla-rich variant for a lighter taste.
+        </div>
+        <div class="flavor">
+          <strong>Matcha</strong>
+          A famous Japanese favourite with green tea powder and subtle bitterness.
+        </div>
+      </div>
+    </section>
+
+    <section class="tile-grid" style="margin-top:2rem;">
+      <div class="card">
+        <h3>Unique Limited Editions</h3>
+        <p>From honeycomb and strawberry cheesecake to wasabi and pumpkin pudding, KitKat releases daring limited editions worldwide. These special bars often celebrate seasons, local tastes, and cultural holidays.</p>
+      </div>
+      <div class="card">
+        <h3>Brand Partnerships</h3>
+        <p>KitKat has teamed up with fashion houses, gaming franchises, and artists to produce collectible packaging and co-branded treats that amplify both style and flavor.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <span>🤝</span>
+        <h2>Partnership Highlights</h2>
+      </div>
+      <div class="partnerships">
+        <div class="partnership">
+          <div class="partnership-icon">1</div>
+          <div>
+            <h3>Nintendo</h3>
+            <p>Video game collaborations featuring special KitKat packaging celebrating beloved characters and franchises.</p>
+          </div>
+        </div>
+        <div class="partnership">
+          <div class="partnership-icon">2</div>
+          <div>
+            <h3>Adidas</h3>
+            <p>Limited shoes and apparel releases that turned KitKat branding into wearable streetwear for fans.</p>
+          </div>
+        </div>
+        <div class="partnership">
+          <div class="partnership-icon">3</div>
+          <div>
+            <h3>Local Bakeries</h3>
+            <p>Creative collaborations with bakeries and cafes to make KitKat-topped desserts, drinks, and pastries.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="graphic-panel">
+      <div class="graphic-inner">
+        <div>
+          <h2>Red & White KitKat Spirit</h2>
+          <p>The red and white theme is inspired by KitKat's iconic wrapper. This page uses those colors to celebrate the brand's bold visual identity and irresistible chocolate energy.</p>
+          <ul class="fact-list">
+            <li>KitKat wrappers are designed for instant recognition.</li>
+            <li>The brand uses memorable slogans and clever packaging to create joyful moments.</li>
+            <li>Special editions often use the same red palette with creative accents.</li>
+          </ul>
+        </div>
+
+        <svg viewBox="0 0 560 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="barGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#d60000" />
+              <stop offset="100%" stop-color="#ff8383" />
+            </linearGradient>
+            <linearGradient id="wrapperGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#fff" />
+              <stop offset="100%" stop-color="#f5f5f5" />
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="560" height="340" rx="32" fill="#fff2f2" />
+          <circle cx="110" cy="100" r="64" fill="#ffffff" opacity="0.9" />
+          <circle cx="460" cy="80" r="46" fill="#ffefef" />
+          <circle cx="470" cy="220" r="30" fill="#ffefef" />
+          <g transform="translate(80 110)">
+            <rect x="0" y="0" width="380" height="140" rx="24" fill="url(#barGrad)" />
+            <g fill="url(#wrapperGrad)">
+              <rect x="24" y="18" width="80" height="104" rx="16" />
+              <rect x="120" y="18" width="80" height="104" rx="16" />
+              <rect x="216" y="18" width="80" height="104" rx="16" />
+              <rect x="312" y="18" width="80" height="104" rx="16" />
+            </g>
+            <path d="M12 16 H368 a20 20 0 0 1 20 20 V124 a20 20 0 0 1 -20 20 H12 a20 20 0 0 1 -20 -20 V36 a20 20 0 0 1 20 -20 Z" fill="none" stroke="#fff" stroke-width="12" opacity="0.45" />
+            <text x="190" y="90" text-anchor="middle" fill="#a30000" font-size="60" font-weight="700" font-family="Arial, sans-serif">KITKAT</text>
+          </g>
+        </svg>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
