@@ -216,6 +216,36 @@
       font-size: 2rem;
     }
 
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .photo-gallery figure {
+      margin: 0;
+      background: white;
+      border: 1px solid rgba(230,0,0,0.12);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+    }
+
+    .photo-gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .photo-gallery figcaption {
+      padding: 1rem;
+      text-align: center;
+      color: #5c1515;
+      font-size: 0.95rem;
+      background: #fff5f5;
+    }
+
     @media (max-width: 820px) {
       .graphic-inner {
         grid-template-columns: 1fr;
@@ -299,6 +329,23 @@
       <div class="card">
         <h3>Brand Partnerships</h3>
         <p>KitKat has teamed up with fashion houses, gaming franchises, and artists to produce collectible packaging and co-branded treats that amplify both style and flavor.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <span>📸</span>
+        <h2>KitKat Photos</h2>
+      </div>
+      <div class="photo-gallery">
+        <figure>
+          <img src="images/kitkat-bar.svg" alt="KitKat bar illustration" />
+          <figcaption>Classic four-finger KitKat bar</figcaption>
+        </figure>
+        <figure>
+          <img src="images/kitkat-wrapper.svg" alt="KitKat wrapper illustration" />
+          <figcaption>Red and white KitKat wrapper design</figcaption>
+        </figure>
       </div>
     </section>
 
